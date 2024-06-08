@@ -12,11 +12,24 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * @covers \OuraApiPhp\Client
+ */
 class ClientTest extends TestCase
 {
+    /**
+     * @var GuzzleClient Mock HTTP client
+     */
     private $mockHttpClient;
+
+    /**
+     * @var string API access token
+     */
     private $accessToken = 'your-access-token';
 
+    /**
+     * Sets up the test environment
+     */
     protected function setUp(): void
     {
         $mock = new MockHandler([
@@ -27,12 +40,18 @@ class ClientTest extends TestCase
         $this->mockHttpClient = new GuzzleClient(['handler' => $handlerStack]);
     }
 
+    /**
+     * Tests the instantiation of the Client class
+     */
     public function testCanBeInstantiated(): void
     {
         $client = new Client($this->accessToken);
         $this->assertInstanceOf(Client::class, $client);
     }
 
+    /**
+     * Tests the getHeartRate method
+     */
     public function testGetHeartRate(): void
     {
         $client = new Client($this->accessToken);
@@ -49,6 +68,9 @@ class ClientTest extends TestCase
         $this->assertSame(['key' => 'value', 'next_token' => 'next123'], $data);
     }
 
+    /**
+     * Tests the getAllHeartRateData method
+     */
     public function testGetAllHeartRateData(): void
     {
         $client = new Client($this->accessToken);

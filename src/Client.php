@@ -9,13 +9,37 @@ use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 
+/**
+ * Oura API Client
+ */
 class Client
 {
+    /**
+     * @var GuzzleClient Guzzle HTTP Client
+     */
     private GuzzleClient $httpClient;
+
+    /**
+     * @var string API access token
+     */
     private string $accessToken;
+
+    /**
+     * @var string Base URI for the Oura API
+     */
     private string $baseUri = 'https://api.ouraring.com';
+
+    /**
+     * @var string API version
+     */
     private string $apiVersion;
 
+    /**
+     * Client constructor.
+     *
+     * @param string $accessToken API access token
+     * @param string $apiVersion API version (default: 'v2')
+     */
     public function __construct(string $accessToken, string $apiVersion = 'v2')
     {
         $this->httpClient = new GuzzleClient([
@@ -29,6 +53,15 @@ class Client
         $this->apiVersion = $apiVersion;
     }
 
+    /**
+     * Makes a request to the Oura API
+     *
+     * @param string $method HTTP method (GET, POST, etc.)
+     * @param string $endpoint API endpoint
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     * @throws RuntimeException if the request fails
+     */
     private function makeRequest(string $method, string $endpoint, array $params = []): ResponseInterface
     {
         $uri = sprintf('/%s/%s', $this->apiVersion, $endpoint);
@@ -44,16 +77,35 @@ class Client
         }
     }
 
+    /**
+     * Retrieves heart rate data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
     public function getHeartRate(array $params = []): ResponseInterface
     {
         return $this->makeRequest('GET', 'usercollection/heartrate', $params);
     }
 
+    /**
+     * Retrieves workout data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
     public function getWorkout(array $params = []): ResponseInterface
     {
         return $this->makeRequest('GET', 'usercollection/workout', $params);
     }
 
+    /**
+     * Retrieves all pages of data for a given endpoint
+     *
+     * @param string $endpoint API endpoint
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
     public function getAllPages(string $endpoint, array $params = []): array
     {
         $allResponses = [];
@@ -75,11 +127,23 @@ class Client
         return $allResponses;
     }
 
+    /**
+     * Retrieves all heart rate data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
     public function getAllHeartRateData(array $params = []): array
     {
         return $this->getAllPages('usercollection/heartrate', $params);
     }
 
+    /**
+     * Retrieves all workout data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
     public function getAllWorkoutData(array $params = []): array
     {
         return $this->getAllPages('usercollection/workout', $params);
