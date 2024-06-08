@@ -6,6 +6,7 @@ A PHP client library for the Oura Ring API.
 
 - PHP 7.4 or higher
 - Composer
+- Oura Personal Access Token (see below for more information)
 
 ## Installation
 
@@ -16,6 +17,10 @@ $ composer require tai-sho/oura-api-php
 ```
 
 # Usage
+## Personal Access Token
+This library requires a personal access token to authenticate with the Oura API. You can obtain a personal access token from the Oura page:
+[Oura API Doc](https://cloud.ouraring.com/docs)
+
 ## Initialization
 First, you need to initialize the client with your API access token.
 ```php
