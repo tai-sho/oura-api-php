@@ -89,6 +89,39 @@ class Client
     }
 
     /**
+     * Retrieves personal info data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getPersonalInfo(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/personal_info', $params);
+    }
+
+    /**
+     * Retrieves tag data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getTag(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/tag', $params);
+    }
+
+    /**
+     * Retrieves enhanced tag data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getEnhancedTag(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/enhanced_tag', $params);
+    }
+
+    /**
      * Retrieves workout data
      *
      * @param array $params Query parameters
@@ -97,6 +130,307 @@ class Client
     public function getWorkout(array $params = []): ResponseInterface
     {
         return $this->makeRequest('GET', 'usercollection/workout', $params);
+    }
+
+    /**
+     * Retrieves session data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSession(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/session', $params);
+    }
+
+    /**
+     * Retrieves daily activity data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyActivity(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/daily_activity', $params);
+    }
+
+    /**
+     * Retrieves daily sleep data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailySleep(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/daily_sleep', $params);
+    }
+
+    /**
+     * Retrieves daily SPO2 data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailySpo2(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/daily_spo2', $params);
+    }
+
+    /**
+     * Retrieves daily readiness data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyReadiness(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/daily_readiness', $params);
+    }
+
+    /**
+     * Retrieves sleep data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSleep(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/sleep', $params);
+    }
+
+    /**
+     * Retrieves sleep time data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSleepTime(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/sleep_time', $params);
+    }
+
+    /**
+     * Retrieves rest mode period data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getRestModePeriod(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/rest_mode_period', $params);
+    }
+
+    /**
+     * Retrieves ring configuration data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getRingConfiguration(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/ring_configuration', $params);
+    }
+
+    /**
+     * Retrieves daily stress data
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyStress(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'usercollection/daily_stress', $params);
+    }
+
+    /**
+     * Retrieves tag data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getTagById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/tag/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves enhanced tag data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getEnhancedTagById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/enhanced_tag/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves workout data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getWorkoutById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/workout/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves session data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSessionById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/session/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves daily activity data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyActivityById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/daily_activity/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves daily sleep data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailySleepById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/daily_sleep/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves daily SPO2 data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailySpo2ById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/daily_spo2/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves daily readiness data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyReadinessById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/daily_readiness/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves sleep data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSleepById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/sleep/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves sleep time data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getSleepTimeById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/sleep_time/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves rest mode period data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getRestModePeriodById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/rest_mode_period/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves ring configuration data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getRingConfigurationById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/ring_configuration/{$documentId}", $params);
+    }
+
+    /**
+     * Retrieves daily stress data by document ID
+     *
+     * @param string $documentId Document ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getDailyStressById(string $documentId, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "usercollection/daily_stress/{$documentId}", $params);
+    }
+
+    /**
+     * Manages webhook subscriptions
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getWebhookSubscription(array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', 'webhook/subscription', $params);
+    }
+
+    /**
+     * Manages webhook subscriptions by ID
+     *
+     * @param string $id Subscription ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function getWebhookSubscriptionById(string $id, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('GET', "webhook/subscription/{$id}", $params);
+    }
+
+    /**
+     * Renews webhook subscription by ID
+     *
+     * @param string $id Subscription ID
+     * @param array $params Query parameters
+     * @return ResponseInterface PSR-7 Response object
+     */
+    public function renewWebhookSubscriptionById(string $id, array $params = []): ResponseInterface
+    {
+        return $this->makeRequest('PUT', "webhook/subscription/renew/{$id}", $params);
     }
 
     /**
