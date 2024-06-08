@@ -7,7 +7,7 @@ A PHP client library for the Oura Ring API.
 Clone the repository and navigate into the project directory.
 
 ```bash
-$ git clone https://github.com/yourname/oura-api-php.git
+$ git clone https://github.com/tai-sho/oura-api-php.git
 $ cd oura-api-php
 ```
 
