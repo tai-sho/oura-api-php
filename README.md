@@ -95,9 +95,6 @@ The client supports the following endpoints:
 - getRestModePeriodById(string $documentId, array $params = [])
 - getRingConfigurationById(string $documentId, array $params = [])
 - getDailyStressById(string $documentId, array $params = [])
-- getWebhookSubscription(array $params = [])
-- getWebhookSubscriptionById(string $id, array $params = [])
-- renewWebhookSubscriptionById(string $id, array $params = [])
 - getAllHeartRateData(array $params = [])
 - getAllWorkoutData(array $params = [])
 

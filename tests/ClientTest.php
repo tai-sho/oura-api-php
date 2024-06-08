@@ -582,63 +582,6 @@ class ClientTest extends TestCase
     }
 
     /**
-     * Tests the getWebhookSubscription method
-     */
-    public function testGetWebhookSubscription(): void
-    {
-        $client = new Client($this->accessToken);
-        $reflection = new \ReflectionClass($client);
-        $property = $reflection->getProperty('httpClient');
-        $property->setAccessible(true);
-        $property->setValue($client, $this->mockHttpClient);
-
-        $response = $client->getWebhookSubscription([]);
-        $data = json_decode($response->getBody()->getContents(), true);
-
-        $this->assertInstanceOf(ResponseInterface::class, $response);
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame(['key' => 'value', 'next_token' => 'next123'], $data);
-    }
-
-    /**
-     * Tests the getWebhookSubscriptionById method
-     */
-    public function testGetWebhookSubscriptionById(): void
-    {
-        $client = new Client($this->accessToken);
-        $reflection = new \ReflectionClass($client);
-        $property = $reflection->getProperty('httpClient');
-        $property->setAccessible(true);
-        $property->setValue($client, $this->mockHttpClient);
-
-        $response = $client->getWebhookSubscriptionById('some-id', []);
-        $data = json_decode($response->getBody()->getContents(), true);
-
-        $this->assertInstanceOf(ResponseInterface::class, $response);
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame(['key' => 'value', 'next_token' => 'next123'], $data);
-    }
-
-    /**
-     * Tests the renewWebhookSubscriptionById method
-     */
-    public function testRenewWebhookSubscriptionById(): void
-    {
-        $client = new Client($this->accessToken);
-        $reflection = new \ReflectionClass($client);
-        $property = $reflection->getProperty('httpClient');
-        $property->setAccessible(true);
-        $property->setValue($client, $this->mockHttpClient);
-
-        $response = $client->renewWebhookSubscriptionById('some-id', []);
-        $data = json_decode($response->getBody()->getContents(), true);
-
-        $this->assertInstanceOf(ResponseInterface::class, $response);
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame(['key' => 'value', 'next_token' => 'next123'], $data);
-    }
-
-    /**
      * Tests the getAllHeartRateData method
      */
     public function testGetAllHeartRateData(): void

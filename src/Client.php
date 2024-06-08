@@ -399,41 +399,6 @@ class Client
     }
 
     /**
-     * Manages webhook subscriptions
-     *
-     * @param array $params Query parameters
-     * @return ResponseInterface PSR-7 Response object
-     */
-    public function getWebhookSubscription(array $params = []): ResponseInterface
-    {
-        return $this->makeRequest('GET', 'webhook/subscription', $params);
-    }
-
-    /**
-     * Manages webhook subscriptions by ID
-     *
-     * @param string $id Subscription ID
-     * @param array $params Query parameters
-     * @return ResponseInterface PSR-7 Response object
-     */
-    public function getWebhookSubscriptionById(string $id, array $params = []): ResponseInterface
-    {
-        return $this->makeRequest('GET', "webhook/subscription/{$id}", $params);
-    }
-
-    /**
-     * Renews webhook subscription by ID
-     *
-     * @param string $id Subscription ID
-     * @param array $params Query parameters
-     * @return ResponseInterface PSR-7 Response object
-     */
-    public function renewWebhookSubscriptionById(string $id, array $params = []): ResponseInterface
-    {
-        return $this->makeRequest('PUT', "webhook/subscription/renew/{$id}", $params);
-    }
-
-    /**
      * Retrieves all pages of data for a given endpoint
      *
      * @param string $endpoint API endpoint
