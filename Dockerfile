@@ -14,7 +14,5 @@ RUN composer install
 
 COPY . .
 
-RUN composer require --dev phpunit/phpunit ^9.0
-
 CMD ["php", "-a"]
 
