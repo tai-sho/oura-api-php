@@ -95,6 +95,8 @@ The client supports the following endpoints:
 - getRestModePeriodById(string $documentId, array $params = [])
 - getRingConfigurationById(string $documentId, array $params = [])
 - getDailyStressById(string $documentId, array $params = [])
+
+## Get All Data Functions (Handling Pagination)
 - getAllHeartRateData(array $params = [])
 - getAllWorkoutData(array $params = [])
 - getAllTagData(array $params = [])
