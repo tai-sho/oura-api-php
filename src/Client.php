@@ -448,5 +448,136 @@ class Client
         return $this->getAllPages('usercollection/workout', $params);
     }
 
+    /**
+     * Retrieves all tag data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllTagData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/tag', $params);
+    }
+
+    /**
+     * Retrieves all enhanced tag data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllEnhancedTagData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/enhanced_tag', $params);
+    }
+
+    /**
+     * Retrieves all session data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllSessionData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/session', $params);
+    }
+
+    /**
+     * Retrieves all daily activity data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllDailyActivityData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/daily_activity', $params);
+    }
+
+    /**
+     * Retrieves all daily sleep data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllDailySleepData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/daily_sleep', $params);
+    }
+
+    /**
+     * Retrieves all daily SPO2 data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllDailySpo2Data(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/daily_spo2', $params);
+    }
+
+    /**
+     * Retrieves all daily readiness data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllDailyReadinessData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/daily_readiness', $params);
+    }
+
+    /**
+     * Retrieves all sleep data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllSleepData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/sleep', $params);
+    }
+
+    /**
+     * Retrieves all sleep time data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllSleepTimeData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/sleep_time', $params);
+    }
+
+    /**
+     * Retrieves all rest mode period data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllRestModePeriodData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/rest_mode_period', $params);
+    }
+
+    /**
+     * Retrieves all ring configuration data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllRingConfigurationData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/ring_configuration', $params);
+    }
+
+    /**
+     * Retrieves all daily stress data, handling pagination
+     *
+     * @param array $params Query parameters
+     * @return ResponseInterface[] Array of PSR-7 Response objects
+     */
+    public function getAllDailyStressData(array $params = []): array
+    {
+        return $this->getAllPages('usercollection/daily_stress', $params);
+    }
 }
 
