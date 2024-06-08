@@ -35,7 +35,7 @@ $client = new Client($accessToken);
 ## Examples
 ### Get Heart Rate Data
 ```php
-$params = ['start_date' => '2023-01-01', 'end_date' => '2023-01-07'];
+$params = ['start_date' => '2024-01-01', 'end_date' => '2024-01-07'];
 $response = $client->getHeartRate($params);
 $data = json_decode($response->getBody()->getContents(), true);
 print_r($data);
@@ -49,14 +49,14 @@ print_r($data);
 ```
 ### Get Workout Data
 ```php
-$params = ['start_date' => '2023-01-01', 'end_date' => '2023-01-07'];
+$params = ['start_date' => '2024-01-01', 'end_date' => '2024-01-07'];
 $response = $client->getWorkout($params);
 $data = json_decode($response->getBody()->getContents(), true);
 print_r($data);
 ```
 ### Get All Heart Rate Data (Handling Pagination)
 ```php
-$params = ['start_date' => '2023-01-01', 'end_date' => '2023-01-07'];
+$params = ['start_date' => '2024-01-01', 'end_date' => '2024-01-07'];
 $responses = $client->getAllHeartRateData($params);
 foreach ($responses as $response) {
     $data = json_decode($response->getBody()->getContents(), true);
