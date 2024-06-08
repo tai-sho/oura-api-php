@@ -432,7 +432,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllHeartRateData(array $params = []): array
+    public function getAllHeartRate(array $params = []): array
     {
         return $this->getAllPages('usercollection/heartrate', $params);
     }
@@ -443,7 +443,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllWorkoutData(array $params = []): array
+    public function getAllWorkout(array $params = []): array
     {
         return $this->getAllPages('usercollection/workout', $params);
     }
@@ -454,7 +454,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllTagData(array $params = []): array
+    public function getAllTag(array $params = []): array
     {
         return $this->getAllPages('usercollection/tag', $params);
     }
@@ -465,7 +465,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllEnhancedTagData(array $params = []): array
+    public function getAllEnhancedTag(array $params = []): array
     {
         return $this->getAllPages('usercollection/enhanced_tag', $params);
     }
@@ -476,7 +476,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllSessionData(array $params = []): array
+    public function getAllSession(array $params = []): array
     {
         return $this->getAllPages('usercollection/session', $params);
     }
@@ -487,7 +487,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllDailyActivityData(array $params = []): array
+    public function getAllDailyActivity(array $params = []): array
     {
         return $this->getAllPages('usercollection/daily_activity', $params);
     }
@@ -498,7 +498,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllDailySleepData(array $params = []): array
+    public function getAllDailySleep(array $params = []): array
     {
         return $this->getAllPages('usercollection/daily_sleep', $params);
     }
@@ -509,7 +509,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllDailySpo2Data(array $params = []): array
+    public function getAllDailySpo2(array $params = []): array
     {
         return $this->getAllPages('usercollection/daily_spo2', $params);
     }
@@ -520,7 +520,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllDailyReadinessData(array $params = []): array
+    public function getAllDailyReadiness(array $params = []): array
     {
         return $this->getAllPages('usercollection/daily_readiness', $params);
     }
@@ -531,7 +531,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllSleepData(array $params = []): array
+    public function getAllSleep(array $params = []): array
     {
         return $this->getAllPages('usercollection/sleep', $params);
     }
@@ -542,7 +542,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllSleepTimeData(array $params = []): array
+    public function getAllSleepTime(array $params = []): array
     {
         return $this->getAllPages('usercollection/sleep_time', $params);
     }
@@ -553,7 +553,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllRestModePeriodData(array $params = []): array
+    public function getAllRestModePeriod(array $params = []): array
     {
         return $this->getAllPages('usercollection/rest_mode_period', $params);
     }
@@ -564,7 +564,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllRingConfigurationData(array $params = []): array
+    public function getAllRingConfiguration(array $params = []): array
     {
         return $this->getAllPages('usercollection/ring_configuration', $params);
     }
@@ -575,7 +575,7 @@ class Client
      * @param array $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
-    public function getAllDailyStressData(array $params = []): array
+    public function getAllDailyStress(array $params = []): array
     {
         return $this->getAllPages('usercollection/daily_stress', $params);
     }

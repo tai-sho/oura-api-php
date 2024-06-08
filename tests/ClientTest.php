@@ -584,7 +584,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllHeartRateData method
      */
-    public function testGetAllHeartRateData(): void
+    public function testGetAllHeartRate(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -592,7 +592,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllHeartRateData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllHeartRate(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -602,7 +602,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllWorkoutData method
      */
-    public function testGetAllWorkoutData(): void
+    public function testGetAllWorkout(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -610,7 +610,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllWorkoutData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllWorkout(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -620,7 +620,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllTagData method
      */
-    public function testGetAllTagData(): void
+    public function testGetAllTag(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -628,7 +628,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllTagData([]);
+        $responses = $client->getAllTag([]);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -638,7 +638,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllEnhancedTagData method
      */
-    public function testGetAllEnhancedTagData(): void
+    public function testGetAllEnhancedTag(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -646,7 +646,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllEnhancedTagData([]);
+        $responses = $client->getAllEnhancedTag([]);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -656,7 +656,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllSessionData method
      */
-    public function testGetAllSessionData(): void
+    public function testGetAllSession(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -664,7 +664,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllSessionData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllSession(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -674,7 +674,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllDailyActivityData method
      */
-    public function testGetAllDailyActivityData(): void
+    public function testGetAllDailyActivity(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -682,7 +682,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllDailyActivityData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllDailyActivity(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -692,7 +692,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllDailySleepData method
      */
-    public function testGetAllDailySleepData(): void
+    public function testGetAllDailySleep(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -700,7 +700,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllDailySleepData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllDailySleep(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -710,7 +710,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllDailySpo2Data method
      */
-    public function testGetAllDailySpo2Data(): void
+    public function testGetAllDailySpo2(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -718,7 +718,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllDailySpo2Data(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllDailySpo2(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -728,7 +728,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllDailyReadinessData method
      */
-    public function testGetAllDailyReadinessData(): void
+    public function testGetAllDailyReadiness(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -736,7 +736,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllDailyReadinessData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllDailyReadiness(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -746,7 +746,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllSleepData method
      */
-    public function testGetAllSleepData(): void
+    public function testGetAllSleep(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -754,7 +754,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllSleepData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllSleep(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -764,7 +764,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllSleepTimeData method
      */
-    public function testGetAllSleepTimeData(): void
+    public function testGetAllSleepTime(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -772,7 +772,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllSleepTimeData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllSleepTime(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -782,7 +782,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllRestModePeriodData method
      */
-    public function testGetAllRestModePeriodData(): void
+    public function testGetAllRestModePeriod(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -790,7 +790,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllRestModePeriodData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllRestModePeriod(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -800,7 +800,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllRingConfigurationData method
      */
-    public function testGetAllRingConfigurationData(): void
+    public function testGetAllRingConfiguration(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -808,7 +808,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllRingConfigurationData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllRingConfiguration(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
@@ -818,7 +818,7 @@ class ClientTest extends TestCase
     /**
      * Tests the getAllDailyStressData method
      */
-    public function testGetAllDailyStressData(): void
+    public function testGetAllDailyStress(): void
     {
         $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
@@ -826,7 +826,7 @@ class ClientTest extends TestCase
         $property->setAccessible(true);
         $property->setValue($client, $this->mockHttpClient);
 
-        $responses = $client->getAllDailyStressData(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
+        $responses = $client->getAllDailyStress(['start_date' => '2023-01-01', 'end_date' => '2023-01-07']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);

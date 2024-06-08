@@ -97,6 +97,18 @@ The client supports the following endpoints:
 - getDailyStressById(string $documentId, array $params = [])
 - getAllHeartRateData(array $params = [])
 - getAllWorkoutData(array $params = [])
+- getAllTagData(array $params = [])
+- getAllEnhancedTagData(array $params = [])
+- getAllSessionData(array $params = [])
+- getAllDailyActivityData(array $params = [])
+- getAllDailySleepData(array $params = [])
+- getAllDailySpo2Data(array $params = [])
+- getAllDailyReadinessData(array $params = [])
+- getAllSleepData(array $params = [])
+- getAllSleepTimeData(array $params = [])
+- getAllRestModePeriodData(array $params = [])
+- getAllRingConfigurationData(array $params = [])
+- getAllDailyStressData(array $params = [])
 
 # Contributing
 Welcome contributions! Please submit a pull request or open an issue to discuss changes.
