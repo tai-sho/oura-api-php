@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace OuraApiPhp\Tests;
 
-use OuraApiPhp\OuraApiClient;
+use OuraApiPhp\Client;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Handler\MockHandler;
@@ -29,13 +29,13 @@ class ClientTest extends TestCase
 
     public function testCanBeInstantiated(): void
     {
-        $client = new OuraApiClient($this->accessToken);
-        $this->assertInstanceOf(OuraApiClient::class, $client);
+        $client = new Client($this->accessToken);
+        $this->assertInstanceOf(Client::class, $client);
     }
 
     public function testGetHeartRate(): void
     {
-        $client = new OuraApiClient($this->accessToken);
+        $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
         $property = $reflection->getProperty('httpClient');
         $property->setAccessible(true);
@@ -51,7 +51,7 @@ class ClientTest extends TestCase
 
     public function testGetAllHeartRateData(): void
     {
-        $client = new OuraApiClient($this->accessToken);
+        $client = new Client($this->accessToken);
         $reflection = new \ReflectionClass($client);
         $property = $reflection->getProperty('httpClient');
         $property->setAccessible(true);

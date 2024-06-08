@@ -9,7 +9,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 
-class OuraApiClient
+class Client
 {
     private GuzzleClient $httpClient;
     private string $accessToken;
@@ -86,3 +86,4 @@ class OuraApiClient
     }
 
 }
+
