@@ -20,11 +20,6 @@ class Client
     private GuzzleClient $httpClient;
 
     /**
-     * @var string API access token
-     */
-    private string $accessToken;
-
-    /**
      * @var string Base URI for the Oura API
      */
     private string $baseUri = 'https://api.ouraring.com';
@@ -49,7 +44,6 @@ class Client
                 'Accept' => 'application/json',
             ],
         ]);
-        $this->accessToken = $accessToken;
         $this->apiVersion = $apiVersion;
     }
 
@@ -58,7 +52,7 @@ class Client
      *
      * @param string $method HTTP method (GET, POST, etc.)
      * @param string $endpoint API endpoint
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      * @throws RuntimeException if the request fails
      */
@@ -80,7 +74,7 @@ class Client
     /**
      * Retrieves heart rate data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getHeartRate(array $params = []): ResponseInterface
@@ -91,7 +85,7 @@ class Client
     /**
      * Retrieves personal info data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getPersonalInfo(array $params = []): ResponseInterface
@@ -102,7 +96,7 @@ class Client
     /**
      * Retrieves tag data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getTag(array $params = []): ResponseInterface
@@ -113,7 +107,7 @@ class Client
     /**
      * Retrieves enhanced tag data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getEnhancedTag(array $params = []): ResponseInterface
@@ -124,7 +118,7 @@ class Client
     /**
      * Retrieves workout data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getWorkout(array $params = []): ResponseInterface
@@ -135,7 +129,7 @@ class Client
     /**
      * Retrieves session data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSession(array $params = []): ResponseInterface
@@ -146,7 +140,7 @@ class Client
     /**
      * Retrieves daily activity data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyActivity(array $params = []): ResponseInterface
@@ -157,7 +151,7 @@ class Client
     /**
      * Retrieves daily sleep data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailySleep(array $params = []): ResponseInterface
@@ -168,7 +162,7 @@ class Client
     /**
      * Retrieves daily SPO2 data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailySpo2(array $params = []): ResponseInterface
@@ -179,7 +173,7 @@ class Client
     /**
      * Retrieves daily readiness data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyReadiness(array $params = []): ResponseInterface
@@ -190,7 +184,7 @@ class Client
     /**
      * Retrieves sleep data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSleep(array $params = []): ResponseInterface
@@ -201,7 +195,7 @@ class Client
     /**
      * Retrieves sleep time data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSleepTime(array $params = []): ResponseInterface
@@ -212,7 +206,7 @@ class Client
     /**
      * Retrieves rest mode period data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getRestModePeriod(array $params = []): ResponseInterface
@@ -223,7 +217,7 @@ class Client
     /**
      * Retrieves ring configuration data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getRingConfiguration(array $params = []): ResponseInterface
@@ -234,7 +228,7 @@ class Client
     /**
      * Retrieves daily stress data
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyStress(array $params = []): ResponseInterface
@@ -246,7 +240,7 @@ class Client
      * Retrieves tag data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getTagById(string $documentId, array $params = []): ResponseInterface
@@ -258,7 +252,7 @@ class Client
      * Retrieves enhanced tag data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getEnhancedTagById(string $documentId, array $params = []): ResponseInterface
@@ -270,7 +264,7 @@ class Client
      * Retrieves workout data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getWorkoutById(string $documentId, array $params = []): ResponseInterface
@@ -282,7 +276,7 @@ class Client
      * Retrieves session data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSessionById(string $documentId, array $params = []): ResponseInterface
@@ -294,7 +288,7 @@ class Client
      * Retrieves daily activity data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyActivityById(string $documentId, array $params = []): ResponseInterface
@@ -306,7 +300,7 @@ class Client
      * Retrieves daily sleep data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailySleepById(string $documentId, array $params = []): ResponseInterface
@@ -318,7 +312,7 @@ class Client
      * Retrieves daily SPO2 data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailySpo2ById(string $documentId, array $params = []): ResponseInterface
@@ -330,7 +324,7 @@ class Client
      * Retrieves daily readiness data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyReadinessById(string $documentId, array $params = []): ResponseInterface
@@ -342,7 +336,7 @@ class Client
      * Retrieves sleep data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSleepById(string $documentId, array $params = []): ResponseInterface
@@ -354,7 +348,7 @@ class Client
      * Retrieves sleep time data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getSleepTimeById(string $documentId, array $params = []): ResponseInterface
@@ -366,7 +360,7 @@ class Client
      * Retrieves rest mode period data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getRestModePeriodById(string $documentId, array $params = []): ResponseInterface
@@ -378,7 +372,7 @@ class Client
      * Retrieves ring configuration data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getRingConfigurationById(string $documentId, array $params = []): ResponseInterface
@@ -390,7 +384,7 @@ class Client
      * Retrieves daily stress data by document ID
      *
      * @param string $documentId Document ID
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface PSR-7 Response object
      */
     public function getDailyStressById(string $documentId, array $params = []): ResponseInterface
@@ -402,7 +396,7 @@ class Client
      * Retrieves all pages of data for a given endpoint
      *
      * @param string $endpoint API endpoint
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllPages(string $endpoint, array $params = []): array
@@ -428,7 +422,7 @@ class Client
     /**
      * Retrieves all heart rate data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllHeartRate(array $params = []): array
@@ -439,7 +433,7 @@ class Client
     /**
      * Retrieves all workout data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllWorkout(array $params = []): array
@@ -450,7 +444,7 @@ class Client
     /**
      * Retrieves all tag data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllTag(array $params = []): array
@@ -461,7 +455,7 @@ class Client
     /**
      * Retrieves all enhanced tag data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllEnhancedTag(array $params = []): array
@@ -472,7 +466,7 @@ class Client
     /**
      * Retrieves all session data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllSession(array $params = []): array
@@ -483,7 +477,7 @@ class Client
     /**
      * Retrieves all daily activity data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllDailyActivity(array $params = []): array
@@ -494,7 +488,7 @@ class Client
     /**
      * Retrieves all daily sleep data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllDailySleep(array $params = []): array
@@ -505,7 +499,7 @@ class Client
     /**
      * Retrieves all daily SPO2 data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllDailySpo2(array $params = []): array
@@ -516,7 +510,7 @@ class Client
     /**
      * Retrieves all daily readiness data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllDailyReadiness(array $params = []): array
@@ -527,7 +521,7 @@ class Client
     /**
      * Retrieves all sleep data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllSleep(array $params = []): array
@@ -538,7 +532,7 @@ class Client
     /**
      * Retrieves all sleep time data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllSleepTime(array $params = []): array
@@ -549,7 +543,7 @@ class Client
     /**
      * Retrieves all rest mode period data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllRestModePeriod(array $params = []): array
@@ -560,7 +554,7 @@ class Client
     /**
      * Retrieves all ring configuration data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllRingConfiguration(array $params = []): array
@@ -571,7 +565,7 @@ class Client
     /**
      * Retrieves all daily stress data, handling pagination
      *
-     * @param array $params Query parameters
+     * @param array<string,string|int> $params Query parameters
      * @return ResponseInterface[] Array of PSR-7 Response objects
      */
     public function getAllDailyStress(array $params = []): array

@@ -8,6 +8,24 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse -c phpstan.neon
+
   phpunit:
     runs-on: ubuntu-latest
 
