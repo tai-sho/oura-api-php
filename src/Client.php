@@ -420,7 +420,6 @@ class Client
 
             $data = json_decode($response->getBody()->getContents(), true);
             $nextToken = $data['next_token'] ?? null;
-
         } while ($nextToken);
 
         return $allResponses;
@@ -580,4 +579,3 @@ class Client
         return $this->getAllPages('usercollection/daily_stress', $params);
     }
 }
-

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace OuraApiPhp\Tests;
 
-use OuraApiPhp\Client;
-use PHPUnit\Framework\TestCase;
-use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\Response;
+use OuraApiPhp\Client;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -833,4 +833,3 @@ class ClientTest extends TestCase
         $this->assertInstanceOf(ResponseInterface::class, $responses[1]);
     }
 }
-
