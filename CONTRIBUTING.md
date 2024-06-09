@@ -30,8 +30,8 @@ This section guides you through submitting an enhancement suggestion for the Our
 
 ### Submitting a Pull Request
 
-1. **Fork the repository.**
-2. **Clone your fork to your local machine:**
+1. Fork the repository.
+2. Clone your fork to your local machine:
    ```sh
    git clone https://github.com/your-username/oura-api-php.git
    cd oura-api-php
@@ -51,11 +51,44 @@ This section guides you through submitting an enhancement suggestion for the Our
 ```
 7. Open a pull request from your forked repository to the main repository.
 
-## Pull Request Guidelines
+### Pull Request Guidelines
 - Ensure any install or build dependencies are removed before the end of the layer when doing a build.
 - Update the README.md and any other relevant documentation with details of changes to the interface.
 - Ensure the test suite passes.
 - Make sure your code lints.
+
+## Development
+### Using Docker for Development
+We provide a Docker setup to ensure a consistent development environment. To use Docker:
+1. Build the Docker image:
+   ```sh
+   docker-compose build
+```
+2. Run the development environment:
+   ```sh
+   docker-compose up
+```
+3. Use the php environment:
+   ```sh
+   docker-compose exec app bash
+```
+
+The Docker setup will automatically install dependencies and run tests, code style checks and static analysis.
+
+### Code Style and Analysis
+Please ensure your code adheres to our coding standards and passes all checks:
+1. PHP-CS-Fixer: Ensures code style consistency.
+   ```sh
+   vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --allow-resky=yes
+```
+2. PHPStan: Performs static analysis to detect potential issues.
+   ```sh
+   vendor/bin/phpstan analyse -c phpstan.neon
+```
+3. PHPMD: Checks for code smells and potential bugs.
+   ```sh
+   vendor/bin/phpmd src text phpmd.xml
+```
 
 ## Code of Conduct
 This project and everyone participating in it is governed by the Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to tai-sho@tech-style.info.
