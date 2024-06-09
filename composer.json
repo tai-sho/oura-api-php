@@ -25,7 +25,16 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "fix": "php-cs-fixer fix --config=.php-cs-fixer.php --diff --allow-risky=yes",
+        "analyse": "phpstan analyse -c phpstan.neon",
+        "md": "phpmd src ansi phpmd.xml",
+        "all-checks": [
+            "@fix",
+            "@analyse",
+            "@md",
+            "@test"
+        ]
     },
     "authors": [
         {
