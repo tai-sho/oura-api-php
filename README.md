@@ -1,9 +1,9 @@
 # oura-api-php
 [![Latest Stable Version](https://poser.pugx.org/tai-sho/oura-api-php/v/stable)](https://packagist.org/packages/tai-sho/oura-api-php)
 [![Build Status](https://github.com/tai-sho/oura-api-php/actions/workflows/code_check.yml/badge.svg)](https://github.com/tai-sho/oura-api-php/actions/workflows/code_check.yml)
-[![License](https://poser.pugx.org/tai-sho/oura-api-php/license)](https://packagist.org/packages/tai-sho/oura-api-php)
 [![Coverage Status](https://coveralls.io/repos/github/tai-sho/oura-api-php/badge.svg?branch=main)](https://coveralls.io/github/tai-sho/oura-api-php?branch=main)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.4-blue)](https://packagist.org/packages/tai-sho/oura-api-php)
+[![License](https://poser.pugx.org/tai-sho/oura-api-php/license)](https://packagist.org/packages/tai-sho/oura-api-php)
 [![Twitter Follow](https://img.shields.io/twitter/follow/tai-sho.svg?style=social&label=Follow)](https://twitter.com/tai-sho)
 
 A PHP client library for the Oura Ring API.
