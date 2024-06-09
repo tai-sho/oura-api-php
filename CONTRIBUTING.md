@@ -75,19 +75,28 @@ We provide a Docker setup to ensure a consistent development environment. To use
 
 The Docker setup will automatically install dependencies and run tests, code style checks and static analysis.
 
-### Code Style and Analysis
+### Code Style, Analysis and Testing
 Please ensure your code adheres to our coding standards and passes all checks:
 1. PHP-CS-Fixer: Ensures code style consistency.
    ```sh
-   vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --allow-resky=yes
+   composer fix
 ```
 2. PHPStan: Performs static analysis to detect potential issues.
    ```sh
-   vendor/bin/phpstan analyse -c phpstan.neon
+   composer analyse
 ```
 3. PHPMD: Checks for code smells and potential bugs.
    ```sh
-   vendor/bin/phpmd src text phpmd.xml
+   composer md
+```
+4. PHPUnit: Unit testing.
+   ```sh
+   composer test
+```
+
+You can run all tests and checks with a single command:
+```sh
+composer all-checks
 ```
 
 ## Code of Conduct
