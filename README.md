@@ -121,5 +121,5 @@ The client supports the following endpoints:
 # Contributing
 Welcome contributions! Please submit a pull request or open an issue to discuss changes.
 
-# Lisence
+# License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/tai-sho/oura-api-php/blob/main/LICENSE) file for details.
