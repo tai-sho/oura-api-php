@@ -1,6 +1,11 @@
 name: Code quality check
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   phpunit:
@@ -44,5 +49,5 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git add .
             git commit -m "Apply PHP-CS-Fixer changes"
-            git push
+            git push origin HEAD:${{ github.ref }}
           fi
