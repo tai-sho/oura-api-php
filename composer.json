@@ -8,6 +8,10 @@
         "psr/http-message": "^2.0",
         "psr/http-client": "^1.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "friendsofphp/php-cs-fixer": "^3.58"
+    },
     "autoload": {
         "psr-4": {
             "OuraApiPhp\\": "src/"
@@ -27,8 +31,5 @@
             "email": "tai-sho@tech-style.info"
         }
     ],
-    "license": "MIT",
-    "require-dev": {
-        "phpunit/phpunit": "^9.6"
-    }
+    "license": "MIT"
 }

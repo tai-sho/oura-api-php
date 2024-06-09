@@ -21,3 +21,28 @@ jobs:
       - name: Run PHPUnit
         run: vendor/bin/phpunit
 
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run PHP-CS-Fixer
+        run: |
+          vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --allow-risky=yes
+          if [[ `git status --porcelain` ]]; then
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
+            git add .
+            git commit -m "Apply PHP-CS-Fixer changes"
+            git push
+          fi
