@@ -1,4 +1,8 @@
 # oura-api-php
+[![Latest Stable Version](https://poser.pugx.org/tai-sho/oura-api-php/v/stable)](https://packagist.org/packages/tai-sho/oura-api-php)
+[![Build Status](https://github.com/tai-sho/oura-api-php/actions/workflows/code_check.yml/badge.svg)](https://github.com/tai-sho/oura-api-php/actions/workflows/code_check.yml)
+[![License](https://poser.pugx.org/tai-sho/oura-api-php/license)](https://packagist.org/packages/tai-sho/oura-api-php)
+[![Twitter Follow](https://img.shields.io/twitter/follow/tai-sho.svg?style=social&label=Follow)](https://twitter.com/tai-sho)
 
 A PHP client library for the Oura Ring API.
 
@@ -67,50 +71,50 @@ foreach ($responses as $response) {
 ## Available Endpoints
 The client supports the following endpoints:
 
-- getHeartRate(array $params = [])
-- getPersonalInfo(array $params = [])
-- getTag(array $params = [])
-- getEnhancedTag(array $params = [])
-- getWorkout(array $params = [])
-- getSession(array $params = [])
-- getDailyActivity(array $params = [])
-- getDailySleep(array $params = [])
-- getDailySpo2(array $params = [])
-- getDailyReadiness(array $params = [])
-- getSleep(array $params = [])
-- getSleepTime(array $params = [])
-- getRestModePeriod(array $params = [])
-- getRingConfiguration(array $params = [])
-- getDailyStress(array $params = [])
-- getTagById(string $documentId, array $params = [])
-- getEnhancedTagById(string $documentId, array $params = [])
-- getWorkoutById(string $documentId, array $params = [])
-- getSessionById(string $documentId, array $params = [])
-- getDailyActivityById(string $documentId, array $params = [])
-- getDailySleepById(string $documentId, array $params = [])
-- getDailySpo2ById(string $documentId, array $params = [])
-- getDailyReadinessById(string $documentId, array $params = [])
-- getSleepById(string $documentId, array $params = [])
-- getSleepTimeById(string $documentId, array $params = [])
-- getRestModePeriodById(string $documentId, array $params = [])
-- getRingConfigurationById(string $documentId, array $params = [])
-- getDailyStressById(string $documentId, array $params = [])
+- `getHeartRate(array $params = [])`
+- `getPersonalInfo(array $params = [])`
+- `getTag(array $params = [])`
+- `getEnhancedTag(array $params = [])`
+- `getWorkout(array $params = [])`
+- `getSession(array $params = [])`
+- `getDailyActivity(array $params = [])`
+- `getDailySleep(array $params = [])`
+- `getDailySpo2(array $params = [])`
+- `getDailyReadiness(array $params = [])`
+- `getSleep(array $params = [])`
+- `getSleepTime(array $params = [])`
+- `getRestModePeriod(array $params = [])`
+- `getRingConfiguration(array $params = [])`
+- `getDailyStress(array $params = [])`
+- `getTagById(string $documentId, array $params = [])`
+- `getEnhancedTagById(string $documentId, array $params = [])`
+- `getWorkoutById(string $documentId, array $params = [])`
+- `getSessionById(string $documentId, array $params = [])`
+- `getDailyActivityById(string $documentId, array $params = [])`
+- `getDailySleepById(string $documentId, array $params = [])`
+- `getDailySpo2ById(string $documentId, array $params = [])`
+- `getDailyReadinessById(string $documentId, array $params = [])`
+- `getSleepById(string $documentId, array $params = [])`
+- `getSleepTimeById(string $documentId, array $params = [])`
+- `getRestModePeriodById(string $documentId, array $params = [])`
+- `getRingConfigurationById(string $documentId, array $params = [])`
+- `getDailyStressById(string $documentId, array $params = [])`
 
 ## Get All Data Functions (Handling Pagination)
-- getAllHeartRateData(array $params = [])
-- getAllWorkoutData(array $params = [])
-- getAllTagData(array $params = [])
-- getAllEnhancedTagData(array $params = [])
-- getAllSessionData(array $params = [])
-- getAllDailyActivityData(array $params = [])
-- getAllDailySleepData(array $params = [])
-- getAllDailySpo2Data(array $params = [])
-- getAllDailyReadinessData(array $params = [])
-- getAllSleepData(array $params = [])
-- getAllSleepTimeData(array $params = [])
-- getAllRestModePeriodData(array $params = [])
-- getAllRingConfigurationData(array $params = [])
-- getAllDailyStressData(array $params = [])
+- `getAllHeartRateData(array $params = [])`
+- `getAllWorkoutData(array $params = [])`
+- `getAllTagData(array $params = [])`
+- `getAllEnhancedTagData(array $params = [])`
+- `getAllSessionData(array $params = [])`
+- `getAllDailyActivityData(array $params = [])`
+- `getAllDailySleepData(array $params = [])`
+- `getAllDailySpo2Data(array $params = [])`
+- `getAllDailyReadinessData(array $params = [])`
+- `getAllSleepData(array $params = [])`
+- `getAllSleepTimeData(array $params = [])`
+- `getAllRestModePeriodData(array $params = [])`
+- `getAllRingConfigurationData(array $params = [])`
+- `getAllDailyStressData(array $params = [])`
 
 # Contributing
 Welcome contributions! Please submit a pull request or open an issue to discuss changes.
